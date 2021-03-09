@@ -10,19 +10,22 @@ import javax.swing.JTextField;
 import javax.swing.JScrollBar;
 import javax.swing.JLabel;
 import java.awt.Font;
+
+import javax.swing.AbstractButton;
 import javax.swing.JButton;
 import javax.swing.JSpinner;
 import javax.swing.JCheckBox;
 
 public class Cadastro extends JFrame {
 
-	private JPanel contentPane;
-	private JTextField tfNomeProduto;
-	private JTextField tfTipo;
-	private JTextField tfValor;
-	private JTextField tfEstoque;
-	private final JButton btnSalvar = new JButton("Salvar");
-	private final JCheckBox chckbxUnd = new JCheckBox("Und");
+	public JPanel contentPane;
+	public JTextField TfNomeProduto;
+	public JTextField TfTipo;
+	public JTextField TfValor;
+	public JTextField TfEstoque;
+	public JButton BtnSalvar;
+	public JButton BtnLimpar;
+	public final JCheckBox chckbxUnd = new JCheckBox("Und");
 
 	/**
 	 * Launch the application.
@@ -61,42 +64,45 @@ public class Cadastro extends JFrame {
 		lblNewLabel_1.setBounds(10, 61, 106, 28);
 		contentPane.add(lblNewLabel_1);
 		
-		tfNomeProduto = new JTextField();
-		tfNomeProduto.setBounds(126, 62, 216, 29);
-		contentPane.add(tfNomeProduto);
-		tfNomeProduto.setColumns(10);
+		TfNomeProduto = new JTextField();
+		TfNomeProduto.setBounds(126, 62, 216, 29);
+		contentPane.add(TfNomeProduto);
+		TfNomeProduto.setColumns(10);
 		
 		JLabel lblNewLabel_2 = new JLabel("Tipo");
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblNewLabel_2.setBounds(10, 117, 106, 22);
 		contentPane.add(lblNewLabel_2);
 		
-		tfTipo = new JTextField();
-		tfTipo.setBounds(126, 116, 216, 28);
-		contentPane.add(tfTipo);
-		tfTipo.setColumns(10);
+		TfTipo = new JTextField();
+		TfTipo.setBounds(126, 116, 216, 28);
+		contentPane.add(TfTipo);
+		TfTipo.setColumns(10);
 		
 		JLabel lblNewLabel_3 = new JLabel("Valor");
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblNewLabel_3.setBounds(10, 183, 106, 22);
 		contentPane.add(lblNewLabel_3);
 		
-		tfValor = new JTextField();
-		tfValor.setBounds(126, 182, 96, 28);
-		contentPane.add(tfValor);
-		tfValor.setColumns(10);
+		TfValor = new JTextField();
+		TfValor.setBounds(126, 182, 96, 28);
+		contentPane.add(TfValor);
+		TfValor.setColumns(10);
 		
 		JLabel lblNewLabel_4 = new JLabel("Estoque");
 		lblNewLabel_4.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblNewLabel_4.setBounds(10, 231, 106, 22);
 		contentPane.add(lblNewLabel_4);
 		
-		tfEstoque = new JTextField();
-		tfEstoque.setBounds(126, 233, 96, 22);
-		contentPane.add(tfEstoque);
-		tfEstoque.setColumns(10);
+		TfEstoque = new JTextField();
+		TfEstoque.setBounds(126, 233, 96, 22);
+		contentPane.add(TfEstoque);
+		TfEstoque.setColumns(10);
+		
+		JButton btnSalvar = new JButton("Salvar");
 		btnSalvar.setBounds(80, 319, 128, 36);
 		contentPane.add(btnSalvar);
+		
 		chckbxUnd.setBounds(227, 225, 48, 36);
 		contentPane.add(chckbxUnd);
 		
@@ -108,4 +114,60 @@ public class Cadastro extends JFrame {
 		btnLimpar.setBounds(277, 319, 118, 36);
 		contentPane.add(btnLimpar);
 	}
+
+	public JTextField getTfNomeProduto() {
+		return TfNomeProduto;
+	}
+
+	public void setTfNomeProduto(JTextField tfNomeProduto) {
+		TfNomeProduto = tfNomeProduto;
+	}
+
+	public JTextField getTfTipo() {
+		return TfTipo;
+	}
+
+	public void setTfTipo(JTextField tfTipo) {
+		TfTipo = tfTipo;
+	}
+
+	public JTextField getTfValor() {
+		return TfValor;
+	}
+
+	public void setTfValor(JTextField tfValor) {
+		TfValor = tfValor;
+	}
+
+	public JTextField getTfEstoque() {
+		return TfEstoque;
+	}
+
+	public void setTfEstoque(JTextField tfEstoque) {
+		TfEstoque = tfEstoque;
+	}
+
+	public JButton getBtnSalvar() {
+		return BtnSalvar;
+	}
+
+	public void setBtnSalvar(JButton btnSalvar) {
+		BtnSalvar = btnSalvar;
+	}
+
+	public JButton getBtnLimpar() {
+		return BtnLimpar;
+	}
+
+	public void setBtnLimpar(JButton btnLimpar) {
+		BtnLimpar = btnLimpar;
+	}
+
+	public JCheckBox getChckbxUnd() {
+		return chckbxUnd;
+	}
+
+		
+	
+
 }

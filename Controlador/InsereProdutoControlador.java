@@ -13,9 +13,9 @@ import tela.Cadastro;
 
 public class InsereProdutoControlador implements ActionListener {
 
-	private Cadastro tela;
-	private Produto modelo;
-	private Estoque modelo1;
+	public Cadastro tela;
+	public Produto modelo;
+	//private Estoque modelo1;
 	
 	public InsereProdutoControlador(Cadastro ca) {
 		this.tela = ca;
@@ -32,20 +32,20 @@ public class InsereProdutoControlador implements ActionListener {
 			
 			modelo.setNome(this.tela.getTfNomeProduto().getText());
 			modelo.setTipo(this.tela.getTfTipo().getText());
-			modelo.setValor(this.tela.getTfValor().getText());
+			modelo.setValor(Float.parseFloat(this.tela.getTfValor().getText()));
 			//modelo1.setEstoque(Integer parseInt(this.tela.getEstoque().getText())); //estoque
 			
 			ProdutoDao dao = new ProdutoDao();
-			dao.salvarPessoa(modelo);
+			dao.salvarProduto(modelo);
 		
 			JOptionPane.showMessageDialog(null, "Pessoa inserida com Sucesso");
 			
 		} else if(e.getSource() == this.tela.getBtnLimpar()) {
 			
-			this.tela.getTfNome().setText("");
+			this.tela.getTfNomeProduto().setText("");
 			this.tela.getTfTipo().setText("");
 			this.tela.getTfValor().setText("");
-			this.tela.getTfEstoque().setText("");
+			//this.tela.getTfEstoque().setText("");
 			//this.tela.get fazer desmarcar os tipo do estoque
 		}
 	}

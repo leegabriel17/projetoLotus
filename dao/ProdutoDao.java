@@ -13,7 +13,7 @@ public class ProdutoDao {
 	
 	public Conexao con = null;
 
-	public void salvarPessoa(Produto produto) {
+	public void salvarProduto(Produto produto) {
 		
 		try {
 		
@@ -21,9 +21,10 @@ public class ProdutoDao {
 		
 			String sql = "insert into produto (produtoID ,nome, tipo, valor) values (prod_seq.nextval ,?, ?, ?)";
 			PreparedStatement pstm = con.getConnection().prepareStatement(sql);
-			pstm.setInt(3, produto.getvalor());
-			pstm.setInt(2, produto.gettipo());
-			pstm.setString(1, produto.getNome());
+			pstm.setFloat(4,produto.getValor());
+			pstm.setString(3, produto.getTipo());
+			pstm.setString(2, produto.getNome());
+			pstm.setInt(1, produto.getProdutoID());
 			pstm.executeUpdate();
 			
 			System.out.println("Foi inserido com sucesso");
@@ -51,7 +52,7 @@ public class ProdutoDao {
 			while(rs.next()) {
 				
 				Produto p = new Produto();
-				p.setProdutoId(rs.getInt("id"));
+				p.setProdutoID(rs.getInt("id"));
 				p.setNome(rs.getString("nome"));
 				p.setTipo(rs.getString("tipo"));
 				p.setValor(rs.getFloat("valor"));
@@ -106,14 +107,14 @@ public class ProdutoDao {
 		return produto;	
 	}
 	
-	public void editarPessoaPorId(int id, Produto produto) {
+	public void editarProdutoPorId(int id, Produto produto) {
 				
 			try {
 				this.con = Conexao.getInstance();
 				
 				String sql = "update produto set nome = ?, tipo = ?, valor = ? where produtoid = ? ";
 				PreparedStatement pstm = con.getConnection().prepareStatement(sql);
-				pstm.setInt(4, produtoid);
+				pstm.setInt(4, id);
 				pstm.setString(1, produto.getNome());
 				pstm.setString(2, produto.getTipo());
 				pstm.setFloat(3, produto.getValor());
@@ -140,4 +141,8 @@ public class ProdutoDao {
 			e.printStackTrace();
 		}
 	}
+
+
+
+	
 }

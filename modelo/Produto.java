@@ -3,10 +3,10 @@ package modelo;
 public class Produto {
 	
 	
-	private int	ProdutoID;
-	private String nome;
-	private String Tipo;
-	private float valor;
+	public int	ProdutoID;
+	public String nome;
+	public String Tipo;
+	public float valor;
 	
 	public Produto(int produtoID, String nome, String tipo, float valor) {
 
@@ -17,34 +17,40 @@ public class Produto {
 	}
 	
 	public Produto() {}
+	
+	
+	public void setProdutoID(int produtoID) {
+		this.ProdutoID = produtoID;
+	}
 
-	protected int getProdutoID() {
+	public int getProdutoID() {
 		return ProdutoID;
 	}
 
-	protected String getNome() {
+	public String getNome() {
 		return nome;
 	}
 
-	protected void setNome(String nome) {
+	public void setNome(String nome) {
 		this.nome = nome;
 	}
 
-	protected String getTipo() {
+	public String getTipo() {
 		return Tipo;
 	}
 
-	protected void setTipo(String tipo) {
+	public void setTipo(String tipo) {
 		Tipo = tipo;
 	}
 
-	protected float getValor() {
+	public float getValor() {
 		return valor;
 	}
 
-	protected void setValor(float valor) {
+	public void setValor(float valor) {
 		this.valor = valor;
-	};
+	}
+
 	
 	
 }
