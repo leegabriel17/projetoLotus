@@ -2,10 +2,15 @@ package tela;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+
+import Controlador.InsereProdutoControlador;
+
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
@@ -45,6 +50,7 @@ public class TelaPrincipal extends JFrame {
 		menuBar.add(mnMenu);
 		
 		JMenuItem mntmcadastrar = new JMenuItem("Cadastro");
+		mntmcadastrar.addActionListener(this::abrirTelaInserir);
 		mnMenu.add(mntmcadastrar);
 		
 		JMenuItem mntmeditar = new JMenuItem("Gerenciar");
@@ -55,6 +61,7 @@ public class TelaPrincipal extends JFrame {
 		
 		JMenuItem mntmestoque = new JMenuItem("Estoque");
 		mnMenu.add(mntmestoque);
+		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -64,4 +71,34 @@ public class TelaPrincipal extends JFrame {
 		btnpedido.setBounds(5, 5, 426, 231);
 		contentPane.add(btnpedido);
 	}
+	
+	public void abrirTelaInserir(ActionEvent e) {
+		
+        Cadastro ca = new Cadastro();
+        InsereProdutoControlador ipc = new InsereProdutoControlador(ca);
+        carregarFrame(ca);
+    }
+	private void carregarFrame(JFrame ca) {
+		ca.setVisible(true);
+
+    }
+	/*private void abrirFrameGerencia(ActionEvent e) {
+        FrameGerencia fg = new FrameGerencia();
+        GerenciaPessoaController gpc = new GerenciaPessoaController(fg);
+        carregarFrame(fg);
+    }
+	private void carregarFrame(FrameGerencia fg) {
+		fg.setVisible(true);
+ 
+    }
+	private void abrirFrameListagem(ActionEvent e) {
+        FrameLista fl = new FrameLista();
+        ListaPessoaController lpc = new ListaPessoaController(fl);
+        carregarFrame(fl);
+    }
+	private void carregarFrame(FrameLista fl) {
+        fl.setVisible(true);
+
+    }*/
+
 }

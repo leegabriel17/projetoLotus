@@ -22,7 +22,8 @@ public class InsereProdutoControlador implements ActionListener {
 		modelo = new Produto();
 		//modelo1 = new Estoque(); para Estoque
 		this.tela.getBtnSalvar().addActionListener(this);
-		
+		this.tela.getBtnLimpar();
+
 	}
 	
 	@Override
@@ -38,7 +39,7 @@ public class InsereProdutoControlador implements ActionListener {
 			ProdutoDao dao = new ProdutoDao();
 			dao.salvarProduto(modelo);
 		
-			JOptionPane.showMessageDialog(null, "Pessoa inserida com Sucesso");
+			JOptionPane.showMessageDialog(null, "Produto inserida com Sucesso");
 			
 		} else if(e.getSource() == this.tela.getBtnLimpar()) {
 			

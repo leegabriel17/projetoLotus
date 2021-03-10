@@ -25,94 +25,76 @@ public class Cadastro extends JFrame {
 	public JTextField TfEstoque;
 	public JButton BtnSalvar;
 	public JButton BtnLimpar;
+	public JCheckBox chckbxPeso;
 	public final JCheckBox chckbxUnd = new JCheckBox("Und");
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Cadastro frame = new Cadastro();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
 	 */
-	public Cadastro() {
+	public Cadastro(){
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 517, 452);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
+		getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Cadastro");
 		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 14));
 		lblNewLabel.setBounds(147, 10, 118, 37);
-		contentPane.add(lblNewLabel);
+		getContentPane().add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Nome do Produto");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblNewLabel_1.setBounds(10, 61, 106, 28);
-		contentPane.add(lblNewLabel_1);
+		getContentPane().add(lblNewLabel_1);
 		
 		TfNomeProduto = new JTextField();
 		TfNomeProduto.setBounds(126, 62, 216, 29);
-		contentPane.add(TfNomeProduto);
+		getContentPane().add(TfNomeProduto);
 		TfNomeProduto.setColumns(10);
 		
 		JLabel lblNewLabel_2 = new JLabel("Tipo");
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblNewLabel_2.setBounds(10, 117, 106, 22);
-		contentPane.add(lblNewLabel_2);
+		getContentPane().add(lblNewLabel_2);
 		
 		TfTipo = new JTextField();
 		TfTipo.setBounds(126, 116, 216, 28);
-		contentPane.add(TfTipo);
+		getContentPane().add(TfTipo);
 		TfTipo.setColumns(10);
 		
 		JLabel lblNewLabel_3 = new JLabel("Valor");
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblNewLabel_3.setBounds(10, 183, 106, 22);
-		contentPane.add(lblNewLabel_3);
+		getContentPane().add(lblNewLabel_3);
 		
 		TfValor = new JTextField();
 		TfValor.setBounds(126, 182, 96, 28);
-		contentPane.add(TfValor);
+		getContentPane().add(TfValor);
 		TfValor.setColumns(10);
 		
 		JLabel lblNewLabel_4 = new JLabel("Estoque");
 		lblNewLabel_4.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblNewLabel_4.setBounds(10, 231, 106, 22);
-		contentPane.add(lblNewLabel_4);
+		getContentPane().add(lblNewLabel_4);
 		
 		TfEstoque = new JTextField();
 		TfEstoque.setBounds(126, 233, 96, 22);
-		contentPane.add(TfEstoque);
+		getContentPane().add(TfEstoque);
 		TfEstoque.setColumns(10);
 		
-		JButton btnSalvar = new JButton("Salvar");
-		btnSalvar.setBounds(80, 319, 128, 36);
-		contentPane.add(btnSalvar);
+		BtnSalvar = new JButton("Salvar");
+		BtnSalvar.setBounds(80, 319, 128, 36);
+		getContentPane().add(BtnSalvar);
 		
 		chckbxUnd.setBounds(227, 225, 48, 36);
-		contentPane.add(chckbxUnd);
+		getContentPane().add(chckbxUnd);
 		
-		JCheckBox chckbxPeso = new JCheckBox("Peso");
+		chckbxPeso = new JCheckBox("Peso");
 		chckbxPeso.setBounds(277, 233, 48, 21);
-		contentPane.add(chckbxPeso);
+		getContentPane().add(chckbxPeso);
 		
-		JButton btnLimpar = new JButton("Limpar");
-		btnLimpar.setBounds(277, 319, 118, 36);
-		contentPane.add(btnLimpar);
+		BtnLimpar = new JButton("Limpar");
+		BtnLimpar.setBounds(277, 319, 118, 36);
+		getContentPane().add(BtnLimpar);
 	}
 
 	public JTextField getTfNomeProduto() {
